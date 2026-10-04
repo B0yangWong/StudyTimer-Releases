@@ -17,7 +17,7 @@
 
 This repository hosts downloads, documentation, and synthetic demo images. Application source remains private.
 
-**0.1.0 preview:** Apple silicon Macs, macOS 15 or later. The app is ad hoc signed, not Developer ID signed or notarized by Apple. macOS may block the first launch. This is not an Apple-reviewed release. Older supported macOS versions and a clean-Mac download/login flow have not yet been fully tested.
+**0.1.1 preview:** Apple silicon Macs, macOS 15 or later. The app is ad hoc signed, not Developer ID signed or notarized by Apple. macOS may block the first launch. This is not an Apple-reviewed release. Older supported macOS versions and a clean-Mac download/login flow have not yet been fully tested.
 
 ## Features
 
@@ -27,7 +27,7 @@ This repository hosts downloads, documentation, and synthetic demo images. Appli
 | Shared daily total | Main and mini windows combine stopwatch and study-countdown time. New breaks are excluded. |
 | Daily-goal calendar | Set your goal in hours and minutes. Precise liquid fill follows its percentage; dates and time labels stay readable. |
 | Quiet mini window | Compact controls, pinning, hidden window chrome, and a gentle countdown-completion reminder. |
-| Flowing ring and native glass | Rim-only motion, hourly stopwatch colors, and Apple's Liquid Glass controls on macOS 26+. |
+| Flowing ring and native glass | The previous completed hour stays as a full ring while the next color advances over it. Rim-only motion and Apple's Liquid Glass controls on macOS 26+. |
 | English and Chinese | Change language and content size in Settings. |
 | Optional launch at login | Off for new installs. Enable it in Settings; login launch stays in the background with no automatic timer start. |
 | Local-first | No app account, analytics, cloud sync, or automatic update checks. |
@@ -54,9 +54,18 @@ These window screenshots use the production views with isolated, synthetic study
 
 </details>
 
+<details>
+<summary>Completed-hour ring</summary>
+
+This is a production Metal-renderer preview at one and a half hours: red progress advances over the completed blue base ring.
+
+<p align="center"><img src="images/hour-ring.png" width="420" alt="Red progress over a completed blue time ring"></p>
+
+</details>
+
 ## Install and Open
 
-1. Download `StudyTimer-0.1.0-macOS-arm64.zip` from [Releases](https://github.com/B0yangWong/StudyTimer-Releases/releases/latest).
+1. Download `StudyTimer-0.1.1-macOS-arm64.zip` from [Releases](https://github.com/B0yangWong/StudyTimer-Releases/releases/latest).
 2. Extract the archive and move `StudyTimer.app` into `/Applications` or your home `Applications` folder. Quit an older copy normally before replacing it.
 3. Open StudyTimer. If macOS blocks it, review the source of the download and decide whether to trust it. Any exception must be made manually using [Apple's instructions](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unknown-developer-mh40616/mac). Do not disable Gatekeeper globally or use a quarantine-removal script.
 4. Open Settings to choose your daily goal, language, content size, and optional launch at login.
@@ -81,7 +90,7 @@ Normal quit saves and pauses the timer. Sleep pauses an active timer; waking res
 
 Study history stays in `~/Library/Application Support/StudyTimer/sessions.json`; it is not uploaded to GitHub. The app does not independently encrypt, back up, or sync it. See [Privacy](PRIVACY.md).
 
-Only Apple silicon is packaged. Version 0.1.0 was checked on macOS 27, not every supported Mac. Automated tests cover timer accounting, rendering, settings, and login-item state/errors; real reboot/login, older macOS, and clean-Mac security prompts still need hands-on validation. Previous countdown records cannot safely distinguish breaks, so historical totals are preserved. New breaks are excluded.
+Only Apple silicon is packaged. Version 0.1.1 was checked on macOS 27, not every supported Mac. Automated tests cover timer accounting, rendering, settings, and login-item state/errors; real reboot/login, older macOS, and clean-Mac security prompts still need hands-on validation. Previous countdown records cannot safely distinguish breaks, so historical totals are preserved. New breaks are excluded.
 
 Updates are manual. Download a newer release, quit normally, and replace the app without deleting its Application Support folder. Report issues here with your macOS version and reproduction steps; never upload private study history.
 

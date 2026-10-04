@@ -6,7 +6,7 @@
 
 ## 下载
 
-在[最新版本](https://github.com/B0yangWong/StudyTimer-Releases/releases/latest)下载 `StudyTimer-0.1.0-macOS-arm64.zip`。0.1.0 是预览版本，仅提供 Apple silicon 架构，最低目标系统为 macOS 15，目前只在 macOS 27 上检查过。
+在[最新版本](https://github.com/B0yangWong/StudyTimer-Releases/releases/latest)下载 `StudyTimer-0.1.1-macOS-arm64.zip`。0.1.1 是预览版本，仅提供 Apple silicon 架构，最低目标系统为 macOS 15，目前只在 macOS 27 上检查过。
 
 本次不做苹果公证，也没有 Developer ID 签名，仅使用临时签名。首次打开可能被系统拦截；软件没有经过苹果审核，是否信任由你决定。
 
@@ -25,7 +25,7 @@
 - 大窗口和小窗口共用今日累计，包含学习正计时和学习倒计时；新休息记录不计入学习量。
 - 按几小时几分钟设定每日目标，日历颜色按比例填满。
 - 小窗口可置顶，窗口控制在靠近左上角时显示，倒计时结束有轻柔提醒。
-- 圆环流光集中在圆周上，每小时换色；macOS 26 及以上使用原生玻璃控件。
+- 圆环保留上一小时的完整底色，新进度逐步覆盖，按蓝、红、绿、紫循环；小窗进度条也采用相同逻辑。流光集中在圆周上，macOS 26 及以上使用原生玻璃控件。
 - 睡眠时暂停，唤醒后恢复睡眠前正在进行的计时；正常退出保存并暂停。
 
 ## 开机启动

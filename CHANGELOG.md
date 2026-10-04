@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.1 - 2026-10-04
+
+- Keep the previous completed hour as the stopwatch's full base ring. The next hour's color advances over it; blue, red, green, and purple repeat in order.
+- Match the moving rim highlight to the color underneath it instead of recoloring the uncovered base.
+- Apply the same completed-hour behavior to mini-window progress and the non-Metal ring fallback.
+- Add hour-boundary/color-cycle checks and real GPU rendering tests in both appearances. All 40 tests pass.
+
+Study records, daily totals, calendar behavior, and countdown timing are unchanged. This remains an ad hoc signed Apple silicon preview without Apple notarization or an automatic updater.
+
 ## 0.1.0 - 2026-10-02
 
 First public preview for Apple silicon Macs. Source remains private.
